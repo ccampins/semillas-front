@@ -1,0 +1,56 @@
+<form action="" [formGroup]="form" >
+    Nombre
+    <input type="text" class="form-control" id="nombre" formControlName="nombre">
+    Codigo
+    <input type="text" class="form-control" id="codigo" formControlName="codigo">
+    <div *ngIf="form.get('codigo')?.invalid && form.get('codigo')?.dirty && form.get('codigo')?.errors" class="text-danger text-end">
+        {{'codigo no valido'}}
+    </div>
+    Descripcion
+    <input type="text" class="form-control" id="descripcion" formControlName="descripcion" required>
+    <div *ngIf="form.get('descripcion')?.invalid && form.get('descripcion')?.dirty && form.get('descripcion')?.errors" class="text-danger text-end">
+        {{'descripcion no valido'}}
+    </div>
+    Especie
+    <input type="text" class="form-control" id="especie" formControlName="especie" required>
+    <div *ngIf="form.get('especie')?.invalid && form.get('especie')?.dirty && form.get('especie')?.errors" class="text-danger text-end">
+        {{'especie no valido'}}
+    </div>
+    Origen
+    <input type="text" class="form-control" id="origen" formControlName="origen" required>
+    <div *ngIf="form.get('origen')?.invalid && form.get('origen')?.dirty && form.get('origen')?.errors" class="text-danger text-end">
+        {{'origen no valido'}}
+    </div>
+    Proveedor
+    <input type="text" class="form-control" id="proveedor" formControlName="proveedor">
+    <div *ngIf="form.get('proveedor')?.invalid && form.get('proveedor')?.dirty && form.get('proveedor')?.errors" class="text-danger text-end">
+        {{'proveedor no valido'}}
+    </div>
+    Bancodesemillas
+    <input type="text" class="form-control" id="banco_de_semillas" formControlName="banco_de_semillas" required>
+    <div *ngIf="form.get('banco de semillas')?.invalid && form.get('banco de semillas')?.dirty && form.get('banco de semillas')?.errors" class="text-danger text-end">
+        {{'banco de semillas no valido'}}
+    </div>
+    Limiteminimothc
+    <input type="integer" scale="2" class="form-control" id="limite_minimo_thc" formControlName="limite_minimo_thc" required>
+    <div *ngIf="form.get('limite minimo thc')?.invalid && form.get('limite minimo thc')?.dirty && form.get('limite minimo thc')?.errors" class="text-danger text-end">
+        {{'limite minimo thc no valido'}}
+    </div>
+    Limitemaximothc
+    <input type="integer" scale="2" class="form-control" id="limite_maximo_thc" formControlName="limite_maximo_thc" required>
+    <div *ngIf="form.get('limite maximo thc')?.invalid && form.get('limite maximo thc')?.dirty && form.get('limite maximo thc')?.errors" class="text-danger text-end">
+        {{'limite maximo thc no valido'}}
+    </div>
+    Limiteminimocbd
+    <input type="integer" scale="2" class="form-control" id="limite_minimo_cbd" formControlName="limite_minimo_cbd" required>
+    <div *ngIf="form.get('limite minimo cbd')?.invalid && form.get('limite minimo cbd')?.dirty && form.get('limite minimo cbd')?.errors" class="text-danger text-end">
+        {{'limite minimo cbd no valido'}}
+    </div>
+    Limitemaximocbd
+    <input type="integer" scale="2" class="form-control" id="limite_maximo_cbd" formControlName="limite_maximo_cbd" required>
+    <div *ngIf="form.get('limite maximo cbd')?.invalid && form.get('limite maximo cbd')?.dirty && form.get('limite maximo cbd')?.errors" class="text-danger text-end">
+        {{'limite maximo cbd no valido'}}
+    </div>
+    
+    <button (click)="submit()" type="button" class="btn btn-primary m-2">Crear Semilla</button>
+</form>

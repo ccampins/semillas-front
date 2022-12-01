@@ -1,0 +1,42 @@
+<div class="m-4 d-flex justify-content-end">
+    <a routerLink="create" class="btn btn-primary">Create Semilla</a>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Codigo</th>
+            <th>Descripcion</th>
+            <th>Especie</th>
+            <th>Origen</th>
+            <th>Proveedor</th>
+            <th>Banco De Semillas</th>
+            <th>Limite Minimo Thc</th>
+            <th>Limite Maximo Thc</th>
+            <th>Limite Minimo Cbd</th>
+            <th>Limite Maximo Cbd</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let semilla of semillas">
+            <td>{{semilla.nombre}}</td>
+            <td>{{semilla.codigo}}</td>
+            <td>{{semilla.descripcion}}</td>
+            <td>{{semilla.especie}}</td>
+            <td>{{semilla.origen}}</td>
+            <td>{{semilla.proveedor}}</td>
+            <td>{{semilla.bancoDeSemillas}}</td>
+            <td>{{semilla.limiteMinimoThc | number : "0.2"}}</td>
+            <td>{{semilla.limiteMaximoThc | number : "0.2"}}</td>
+            <td>{{semilla.limiteMinimoCbd | number : "0.2"}}</td>
+            <td>{{semilla.limiteMaximoCbd | number : "0.2"}}</td>
+            <td>
+                <button class="btn btn-danger" (click)="deleteSemilla(semilla.id)">Eliminar</button>
+                <br>
+                <br>
+                <button class="btn btn-primary">Actualizar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
