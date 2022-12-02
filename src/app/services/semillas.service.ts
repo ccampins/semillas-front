@@ -22,12 +22,16 @@ export class SemillasService {
     return this.http.get<SemillasModel[]>(URL_API.concat('/semillas/read'), httpOptions);
   }
 
+  showSemilla(id: number):Observable<SemillasModel[]>{
+    return this.http.get<SemillasModel[]>(URL_API.concat('/semillas/show/').concat((id ? id.toString() : '')));
+  }
+
   createSemillas(newSemilla: SemillasModel):Observable<any> {
     return this.http.post(URL_API.concat('/semillas/create'), JSON.stringify(newSemilla));
   }
 
-  updateSemillas(updatedSemilla: SemillasModel): Observable<any> {
-    return this.http.put(URL_API.concat('semillas/update/').concat((updatedSemilla.id ? updatedSemilla.id.toString() : '')), JSON.stringify(updatedSemilla));
+  updateSemillas(id: number | undefined): Observable<any> {
+    return this.http.put(URL_API.concat('semillas/update/').concat((id ? id.toString() : '')), JSON.stringify(id));
   }
 
   deleteSemillas(id: number | undefined): Observable<any> {

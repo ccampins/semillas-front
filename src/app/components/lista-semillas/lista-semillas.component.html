@@ -35,7 +35,7 @@
                 <button class="btn btn-danger" (click)="deleteSemilla(semilla.id)">Eliminar</button>
                 <br>
                 <br>
-                <button class="btn btn-primary">Actualizar</button>
+                <a [routerLink]="['update', semilla.id]" class="btn btn-primary">Actualizar</a>
             </td>
         </tr>
     </tbody>

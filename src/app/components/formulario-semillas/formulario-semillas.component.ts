@@ -56,12 +56,24 @@ export class FormularioSemillasComponent implements OnInit {
       Swal.fire('Create Successfully!','El formulario se envio correctamente','success');
       this.service.createSemillas(this.form.value).subscribe(resp => {
         if(resp){
-          this.router.navigate(['/#']);
+          this.router.navigate(['/']);
         }
       })
     } else {
       Swal.fire('Error','Complete coorrectamente los campos del formulario','error');
     }
+  }
+
+  updateSemillas(id: number | undefined){
+    this.service.updateSemillas(id).subscribe((resp: SemillasModel[]) => {
+      if(resp){
+        this.router.navigate(['/']);
+      }
+    })
+  }
+
+  show(semillas: SemillasModel){
+    this.form.patchValue(semillas)
   }
 
 }

@@ -35,8 +35,5 @@ export class ListaSemillasComponent implements OnInit {
     })
   }
 
-  /* updateSemillas(id: number){
-    this.service.updateSemillas(id).subscribe((resp: SemillasModel[]) => {})
-  } */
 
 }
